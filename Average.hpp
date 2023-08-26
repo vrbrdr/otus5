@@ -5,7 +5,7 @@
 namespace statistic {
     class Average : public IStatistics {
       public:
-        Average() : m_avg{std::numeric_limits<double>::min()} {}
+        Average() {}
 
         void update(double next) override {
             // avg = avg * (n / (n + 1)) + a / (n + 1)
@@ -22,7 +22,7 @@ namespace statistic {
         };
 
       private:
-        double m_avg;
+        double m_avg{0};
         int m_count{0};
     };
 } // namespace statistic
