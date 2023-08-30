@@ -7,7 +7,7 @@ statistic::Percentile::Percentile(unsigned char percent)
     : m_percent{percent},
       m_name{"pct" + std::string(std::to_string((int)percent))} {
 
-    if (percent < 0 || percent > 100) {
+    if (percent > 100) {
         throw new std::invalid_argument(
             "percent should be in the range from 0 to 100");
     }
